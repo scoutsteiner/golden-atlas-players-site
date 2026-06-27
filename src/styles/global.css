@@ -1,0 +1,425 @@
+:root {
+  color-scheme: dark;
+  --bg: #060507;
+  --panel: #140d10;
+  --panel-strong: #1f1216;
+  --text: #f7f0ea;
+  --muted: #d8c6b4;
+  --accent: #d92d2d;
+  --accent-strong: #a41212;
+  --accent-soft: rgba(217, 45, 45, 0.2);
+  --gold: #d5b46f;
+  --border: rgba(213, 180, 111, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #300f13 0%, var(--bg) 55%, #090607 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a:hover {
+  color: #ff6f61;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem 3rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(10, 7, 8, 0.82);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+  position: sticky;
+  top: 0.75rem;
+  z-index: 10;
+  margin-bottom: 1.25rem;
+}
+
+.brand {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.site-nav a {
+  position: relative;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.3rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.site-nav a:hover {
+  background: rgba(217, 45, 45, 0.15);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+main {
+  display: grid;
+  gap: 1.25rem;
+}
+
+section {
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, rgba(28, 15, 18, 0.96), rgba(9, 6, 7, 0.95));
+  padding: 1.25rem;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 1.25rem;
+  background:
+    linear-gradient(120deg, rgba(5, 3, 4, 0.95) 0%, rgba(13, 8, 10, 0.82) 45%, rgba(97, 10, 10, 0.68) 100%),
+    url('/assets/images/posters/red_curtains.jpg') center/cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/posters/spotlight.jpg') center top/cover no-repeat;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+.hero__content,
+.hero__figure {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__content {
+  display: grid;
+  gap: 1rem;
+  max-width: 620px;
+}
+
+.hero__content h1,
+.hero__content h2,
+.section-title {
+  margin: 0;
+  line-height: 1.05;
+}
+
+.hero__content h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--gold);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.hero__intro,
+.section-copy {
+  margin: 0;
+  color: var(--muted);
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.logo-mark {
+  width: min(320px, 75vw);
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.35));
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.38rem 0.76rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.78rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 45, 45, 0.45);
+  background: linear-gradient(135deg, var(--accent), #ff3c3c);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 0 18px rgba(217, 45, 45, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(217, 45, 45, 0.4);
+}
+
+.hero__figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 360px;
+}
+
+.hero__frank {
+  width: min(320px, 44vw);
+  max-width: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+  transform: translateY(14px);
+}
+
+.coming-soon-hero {
+  background:
+    linear-gradient(120deg, rgba(5, 3, 4, 0.95) 0%, rgba(13, 8, 10, 0.82) 45%, rgba(97, 10, 10, 0.68) 100%),
+    url('/assets/images/posters/red_curtains.jpg') center/cover no-repeat;
+}
+
+.coming-soon-headline {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.coming-soon-headline .headline-line {
+  display: block;
+}
+
+.coming-soon-headline .headline-line--middle {
+  margin: 0.2rem 0 1rem;
+}
+
+.coming-soon-headline .headline-line--final {
+  margin-top: 0.4rem;
+  font-size: 1.25em;
+}
+
+.accent-word {
+  color: var(--gold);
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.feature-section__content {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.feature-section__media {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+
+.feature-section__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.card-grid,
+.image-grid,
+.member-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.image-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.member-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card,
+.member-card,
+.info-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover,
+.member-card:hover,
+.info-card:hover,
+.feature-section__media:hover {
+  transform: translateY(-3px);
+  border-color: rgba(213, 180, 111, 0.36);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+}
+
+.card h3,
+.member-card h3,
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+}
+
+.card p,
+.member-card p,
+.info-card p,
+.list {
+  color: var(--muted);
+}
+
+.list {
+  padding-left: 1rem;
+  margin: 0.5rem 0 0;
+}
+
+.two-col {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 0.2rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 840px) {
+  .hero,
+  .feature-section,
+  .two-col,
+  .card-grid,
+  .image-grid,
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__figure {
+    min-height: auto;
+    justify-content: flex-end;
+  }
+
+  .hero__frank {
+    width: min(220px, 60vw);
+    transform: none;
+  }
+
+  .site-header {
+    border-radius: 1rem;
+  }
+}

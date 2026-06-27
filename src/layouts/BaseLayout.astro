@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+const { title = 'Golden Atlas Players', description = 'A warm, theatrical community home for Golden Atlas Players and Rocky Horror fans in the Slate Belt.' } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Golden Atlas Players</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Golden Atlas Players</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/shows">Shows</a>
+          <a href="/cast">Cast</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/community">Community</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p>Golden Atlas Players · Rocky Horror in the Slate Belt.</p>
+        <p>Performing at the GAP Theatre in Wind Gap, PA.</p>
+      </footer>
+    </div>
+  </body>
+</html>

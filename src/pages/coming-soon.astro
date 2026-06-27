@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Coming Soon" description="A coming soon page for Golden Atlas Players and the GAP Theatre community.">
+  <section class="hero coming-soon-hero">
+    <div class="hero__content">
+      <img
+        class="logo-mark"
+        src="/assets/logos/gap-logo.png"
+        alt="Golden Atlas Players logo"
+        onerror="this.style.display='none'"
+      />
+      <h1>Golden Atlas Players</h1>
+      <p class="hero__subtitle">Rocky Horror in the Slate Belt</p>
+      <h2 class="coming-soon-headline">
+        <span class="headline-line">Shivering with</span>
+        <span class="headline-line headline-line--middle">antici...</span>
+        <span class="headline-line headline-line--final accent-word">...pation!</span>
+      </h2>
+      <p class="hero__intro">
+        Our new online home is coming soon. Golden Atlas Players performs at the GAP Theatre in Wind Gap, PA, and we’re building a local community space for Rocky Horror fans, first-timers, performers, and midnight movie weirdos across the Slate Belt and beyond.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="/community">Join our Discord</a>
+        <a class="btn secondary" href="https://www.facebook.com/GoldenAtlasPlayers">Follow on Facebook</a>
+        <a class="btn secondary" href="/">Back to Home</a>
+      </div>
+    </div>
+    <div class="hero__figure">
+      <img
+        class="hero__frank"
+        src="/assets/images/cast/GAP_cast.jpg"
+        alt="Golden Atlas Players cast photo"
+        loading="eager"
+        onerror="this.style.display='none'"
+      />
+    </div>
+  </section>
+</BaseLayout>
