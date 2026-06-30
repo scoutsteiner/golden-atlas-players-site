@@ -3,19 +3,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="About" description="Golden Atlas Players is a Rocky Horror shadowcast rooted in the Slate Belt and performing at the GAP Theatre in Wind Gap.">
-  <section class="hero">
-    <div>
+  <section class="hero about-hero">
+    <div class="hero-copy">
       <span class="badge">About</span>
+
       <h1>Golden Atlas Players is a Rocky Horror shadowcast rooted in the Slate Belt.</h1>
-      <p>Based at the GAP Theatre in Wind Gap, we’re building a warm local community around Rocky Horror performance, audience connection, and the joy of sharing weird, theatrical nights together.</p>
-      <p>Clint and Emma lead the cast with a welcoming, community-first spirit that values both longtime fans and first-timers.</p>
+
+      <p>
+        Based at the GAP Theatre in Wind Gap, we’re building a warm local community around
+        Rocky Horror performance, audience connection, and the joy of sharing weird,
+        theatrical nights together.
+      </p>
+
+      <p>
+        Clint and Emma lead the cast with a welcoming, community-first spirit that values
+        both longtime fans and first-timers.
+      </p>
     </div>
-    <div class="placeholder">Theater or cast photo placeholder</div>
+
+    <figure class="photo-card">
+      <img
+        src="/images/about-cast.jpg"
+        alt="Golden Atlas Players cast and community at the GAP Theatre"
+        loading="eager"
+        decoding="async"
+      />
+      <figcaption>Rocky Horror in the Slate Belt, built by local fans and performers.</figcaption>
+    </figure>
   </section>
 
   <section>
     <h2 class="section-title">What we’re building</h2>
-    <p class="section-copy">We’re creating a home for local Rocky Horror fans, performer friendships, and the kind of community that grows one midnight show at a time. The goal is to keep things local, theatrical, and welcoming.</p>
+
+    <p class="section-copy">
+      We're creating a home for local Rocky Horror fans, performer friendships, and the kind
+      of community that grows one 10 PM show at a time. The goal is to keep things local,
+      theatrical, and welcoming.
+    </p>
+
     <ul class="list">
       <li>Shadowcast performances at the GAP Theatre</li>
       <li>Community connection for audiences and performers</li>
@@ -23,3 +48,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </ul>
   </section>
 </BaseLayout>
+
+<style>
+  .about-hero {
+    align-items: center;
+    gap: 2rem;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 3, 4, 0.86) 0%,
+        rgba(32, 7, 9, 0.72) 48%,
+        rgba(90, 11, 11, 0.55) 100%
+      );
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-copy h1 {
+    color: #f5ebe4;
+    opacity: 1;
+  }
+
+  .hero-copy p {
+    color: #d9c8bd;
+    opacity: 1;
+  }
+
+  .photo-card {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(218, 158, 93, 0.35);
+    border-radius: 1.25rem;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+  }
+
+  .photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .photo-card figcaption {
+    padding: 0.85rem 1rem;
+    color: #d9c8bd;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 760px) {
+    .about-hero {
+      gap: 1.5rem;
+    }
+
+    .photo-card img {
+      aspect-ratio: 16 / 10;
+    }
+  }
+</style>
