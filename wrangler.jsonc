@@ -1,10 +1,14 @@
-﻿{
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "golden-atlas-players-site",
-  "compatibility_date": "2026-07-02",
-  "assets": {
-    "directory": "./dist"
-  },
-  "workers_dev": true,
-  "preview_urls": true
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"compatibility_date": "2026-07-02",
+	"compatibility_flags": ["global_fetch_strictly_public"],
+	"name": "rocky-horror-site",
+	"main": "@astrojs/cloudflare/entrypoints/server",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"observability": {
+		"enabled": true
+	}
 }
