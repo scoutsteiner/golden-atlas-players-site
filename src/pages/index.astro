@@ -2,40 +2,147 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Coming Soon" description="A coming soon page for Golden Atlas Players and the GAP Theatre community.">
-  <section class="hero coming-soon-hero">
+<BaseLayout title="Home" description="A warm, theatrical online home for Golden Atlas Players and Rocky Horror fans in the Slate Belt.">
+  <section class="hero">
     <div class="hero__content">
       <img
         class="logo-mark"
-        src="/assets/logos/gap-logo.png"
+        src="/assets/logos/Golden_Atlas_Players_Logo.png"
         alt="Golden Atlas Players logo"
         onerror="this.style.display='none'"
       />
       <h1>Golden Atlas Players</h1>
       <p class="hero__subtitle">Rocky Horror in the Slate Belt</p>
-      <h2 class="coming-soon-headline">
-        <span class="headline-line">Shivering with</span>
-        <span class="headline-line headline-line--middle">antici...</span>
-        <span class="headline-line headline-line--final accent-word">...pation!</span>
-      </h2>
-      <p class="hero__intro">
-        Our new online home is coming soon. Golden Atlas Players performs at the GAP Theatre in Wind Gap, PA, and we’re building a local community space for Rocky Horror fans, first-timers, performers, and midnight movie weirdos across the Slate Belt and beyond.
-      </p>
+      <p class="hero__intro">A community home for Rocky Horror fans, performers, and late-night movie weirdos.</p>
       <div class="btn-row">
-        <a class="btn" href="https://discord.gg/YFE8U3NMYV" target="_blank" rel="noopener">Join our Discord</a>
-        <a class="btn secondary" href="https://www.facebook.com/GoldenAtlasPlayers">Follow on Facebook</a>
-        <a class="btn secondary" href="/full-site">Preview Full Site</a>
+        <a class="btn" href="https://discord.gg/YFE8U3NMYV" target="_blank" rel="noopener">Join us on Discord</a>
       </div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=47+S+Broadway%2C+Wind+Gap%2C+PA+18091" target="_blank" rel="noopener">
+        <span class="maps-link__label">Find us</span>
+        <span class="maps-link__address">47 S Broadway, Wind Gap, PA 18091</span>
+      </a>
     </div>
     <div class="hero__figure">
+      <div class="facebook-embed hero-facebook-embed">
+        <iframe
+          title="Golden Atlas Players Facebook page"
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGoldenAtlasPlayers&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+          width="500"
+          height="600"
+          style="border:none;overflow:hidden"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Go on a Strange Journey</h2>
+    <div class="card-grid">
+      <article class="card card--accent">
+        <h3>Late Night at the GAP</h3>
+        <p>Every third Saturday of the month; 10PM at the GAP Theatre.</p>
+      </article>
+      <article class="card card--accent">
+        <h3><a href="/community">Join Us</a></h3>
+        <p>Come say hello in our community space to learn about the cast, events, and getting involved.</p>
+      </article>
+      <article class="card card--accent">
+        <h3><a href="/shows">Follow us elsewhere!</a></h3>
+        <p>Click here to see our other shows!</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <div class="feature-section__content">
+      <a class="community-link" href="/community">
+        <span class="badge">Community</span>
+        <h2 class="section-title">A welcoming home for Rocky Horror lovers.</h2>
+      </a>
+      <p class="section-copy">Golden Atlas Players performs at the GAP Theatre in Wind Gap and welcomes both longtime Rocky Horror fans and complete newcomers. Our goal is to make the experience feel warm, theatrical, and rooted in local community.</p>
+    </div>
+    <div class="feature-section__media">
       <img
-        class="hero__frank"
         src="/assets/images/cast/GAP_cast.jpg"
         alt="Golden Atlas Players cast photo"
-        loading="eager"
-        onerror="this.style.display='none'"
+        loading="lazy"
+        onerror="this.parentElement.classList.add('is-image-missing')"
       />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.facebook-embed {
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(217, 45, 45, 0.28);
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.38);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+.hero-facebook-embed {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.facebook-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border: 0;
+}
+.community-link {
+  display: grid;
+  gap: 0.55rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.community-link:hover {
+  color: inherit;
+}
+
+.maps-link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: fit-content;
+  margin-top: 0.35rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(217, 45, 45, 0.28);
+  border-radius: 999px;
+  background: rgba(10, 7, 8, 0.7);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.maps-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 45, 45, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  color: var(--text);
+}
+
+.maps-link__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.maps-link__address {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+</style>
 

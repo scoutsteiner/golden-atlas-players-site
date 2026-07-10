@@ -3,44 +3,134 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Community" description="A welcoming place for Rocky Horror fans, performers, and audience members connected through Golden Atlas Players.">
-  <section class="hero">
-    <div>
+  <section class="hero community-hero">
+    <div class="community-intro">
       <span class="badge">Community</span>
-      <h1>Connecting local Rocky Horror fans, audience members, and performers.</h1>
-      <p>Our goal is to build a welcoming community around the Golden Atlas Players, whether you love the show, want to perform, or are simply curious about the strange and wonderful world of Rocky Horror.</p>
+      <h1>Welcome to our community.</h1>
+      <p>Rocky Horror is better when nobody has to walk in feeling like a stranger. Golden Atlas Players is building a local home for fans, performers, curious first-timers, and the beautifully over-dressed weirdos who know every callback by heart.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://discord.gg/YFE8U3NMYV" target="_blank" rel="noopener">Join the Discord</a>
+        <a class="btn secondary" href="https://www.facebook.com/GoldenAtlasPlayers" target="_blank" rel="noopener">Follow on Facebook</a>
+      </div>
     </div>
-    <div class="placeholder">Community platform placeholder</div>
-  </section>
-
-  <section>
-    <div class="card-grid">
-      <article class="card">
-        <h3>Audience community</h3>
-        <p>Share favorite moments, event reminders, and local Rocky Horror enthusiasm.</p>
-      </article>
-      <article class="card">
-        <h3>Cast and backstage community</h3>
-        <p>Connect with performers, rehearsal updates, and behind-the-scenes planning.</p>
-      </article>
-      <article class="card">
-        <h3>Announcements</h3>
-        <p>Get updates about performances, events, and new community happenings.</p>
-      </article>
+    <div class="community-embed-panel">
+      <div class="facebook-embed">
+        <iframe
+          title="Golden Atlas Players Facebook page"
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGoldenAtlasPlayers&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+          width="500"
+          height="600"
+          style="border:none;overflow:hidden"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </div>
     </div>
   </section>
 
   <section class="two-col">
     <div>
-      <h2 class="section-title">Where we’ll connect</h2>
-      <p class="section-copy">Facebook is a great fit for folks who prefer a familiar social space, while Discord is a natural home for deeper community chat and ongoing conversation.</p>
+      <h2 class="section-title">New here?</h2>
+      <p class="section-copy">You do not need to know every callback, dress perfectly, or already know someone. If you’re curious, nervous, or just want to see what this crowd is about, come by, ask questions, and take it at your own pace.</p>
     </div>
     <div class="info-card">
-      <h3>Future community links</h3>
-      <ul class="list">
-        <li>Facebook community updates</li>
-        <li>Discord chat and discussion</li>
-        <li>Announcements and reminders</li>
-      </ul>
+      <h3>Want to get involved?</h3>
+      <p class="section-copy">We’re always interested in audience energy, shadowcast interest, tech and backstage help, flyers and outreach, and people who want to help the community feel welcoming.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Community expectations</h2>
+    <ul class="list">
+      <li>Be kind.</li>
+      <li>Respect consent and boundaries.</li>
+      <li>Help new people feel welcome.</li>
+      <li>Keep the weird fun, not uncomfortable.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-title">Join the Discord</h2>
+    <p class="section-copy">For ongoing chat, fan conversation, planning, and connecting between shows.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://discord.gg/YFE8U3NMYV" target="_blank" rel="noopener">Join the Discord</a>
+    </div>
+    <div class="discord-widget-wrap">
+      <iframe
+        src="https://discordapp.com/widget?id=1520898461359145070&theme=dark"
+        width="350"
+        height="500"
+        allowtransparency="true"
+        frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+      ></iframe>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero {
+    align-items: center;
+  }
+
+  .community-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .community-intro {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .community-embed-panel {
+    display: flex;
+    justify-content: center;
+  }
+
+  .facebook-embed {
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(217, 45, 45, 0.24);
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .facebook-embed iframe {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border: 0;
+  }
+
+  .discord-widget-wrap {
+    margin-top: 1rem;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid rgba(217, 45, 45, 0.24);
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .discord-widget-wrap iframe {
+    display: block;
+    border: 0;
+  }
+
+  @media (max-width: 760px) {
+    .community-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

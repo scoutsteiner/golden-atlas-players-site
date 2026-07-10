@@ -2,34 +2,53 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Shows" description="Upcoming performances and community events from Golden Atlas Players at the GAP Theatre.">
+<BaseLayout title="Shows" description="Golden Atlas Players performs The Rocky Horror Picture Show every third Saturday of the month at 10:00 PM at the GAP Theatre in Wind Gap, PA.">
   <section class="hero">
-    <div>
+    <div class="hero__content">
       <span class="badge">Shows</span>
-      <h1>Upcoming performances at the GAP Theatre.</h1>
-      <p>We’re building toward future Rocky Horror screenings, themed events, and shadowcast performances in Wind Gap. These cards are placeholders for upcoming dates and details.</p>
+      <h1>Golden Atlas Players Presents:</h1>
+      <p class="section-copy">Every third Saturday at 10PM at the GAP Theatre.</p>
+      <p class="section-copy">GAP Theatre<br />47 S Broadway<br />Wind Gap, PA 18091</p>
+      <div class="btn-row">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=47%20S%20Broadway%2C%20Wind%20Gap%2C%20PA%2018091" target="_blank" rel="noopener">Get Directions</a>
+      </div>
     </div>
-    <div class="placeholder">Show schedule placeholder</div>
+    <div class="hero__figure">
+      <div class="card hero-card">
+        <h2 class="section-title">The Rocky Horror Picture Show</h2>
+        <p class="section-copy">A local late-night screening with a welcoming crowd, a theatrical feel, and a simple schedule that’s easy to remember.</p>
+      </div>
+    </div>
   </section>
 
   <section>
     <h2 class="section-title">Coming soon</h2>
-    <div class="card-grid">
-      <article class="card">
-        <h3>Midnight Madness</h3>
-        <p>Friday · 10:00 PM · GAP Theatre</p>
-        <p>First community screening and welcome event for new fans.</p>
-      </article>
-      <article class="card">
-        <h3>Time Warp Revue</h3>
-        <p>Saturday · 8:00 PM · GAP Theatre</p>
-        <p>A slightly campy evening with cast updates and audience fun.</p>
-      </article>
-      <article class="card">
-        <h3>Shadow Cast Showcase</h3>
-        <p>Sunday · 7:30 PM · GAP Theatre</p>
-        <p>A preview night for future performances and community outreach.</p>
-      </article>
-    </div>
+    <p class="section-copy">Calendar updates and ticket details will be shared here as they’re confirmed.</p>
   </section>
 </BaseLayout>
+
+<style>
+  .hero {
+    align-items: center;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+  }
+
+  .hero-card {
+    max-width: 420px;
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+      margin-left: 0;
+    }
+  }
+</style>

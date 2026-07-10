@@ -7,31 +7,82 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div>
       <span class="badge">Cast</span>
       <h1>Meet the players behind the curtain.</h1>
-      <p>Golden Atlas Players is still growing its cast roster, and this page is ready for character profiles, performer names, and short bios.</p>
+      <p>Golden Atlas Players was founded in 2025 by Clint and Emma, who wanted to create a safe and supportive community where people of all backgrounds can enjoy Rocky Horror together.</p>
+      <p class="section-copy">We’re building out the cast page now, and we’ll be adding cast bios and performer spotlights to the site soon.</p>
     </div>
-    <div class="placeholder">Cast photo placeholder</div>
+    <div class="hero__figure">
+      <img
+        class="hero__frank"
+        src="/assets/images/cast/about-cast.jpg"
+        alt="Golden Atlas Players cast and community"
+        loading="eager"
+      />
+    </div>
   </section>
 
   <section>
     <div class="member-grid">
       <article class="member-card">
         <div class="placeholder">Character portrait</div>
-        <h3>Dr. Frank-N-Furter</h3>
-        <p><strong>Performer:</strong> TBA</p>
-        <p>Character spotlight placeholder for the lead role.</p>
+        <p><strong>Coming Soon</strong></p>
+        <p>Cast bios and character details will be added to the website soon.</p>
       </article>
       <article class="member-card">
         <div class="placeholder">Character portrait</div>
-        <h3>Riff Raff</h3>
-        <p><strong>Performer:</strong> TBA</p>
-        <p>Character spotlight placeholder for the mysterious house servant.</p>
+        <p><strong>Coming Soon</strong></p>
+        <p>Cast bios and character details will be added to the website soon.</p>
       </article>
       <article class="member-card">
         <div class="placeholder">Character portrait</div>
-        <h3>Columbia</h3>
-        <p><strong>Performer:</strong> TBA</p>
-        <p>Character spotlight placeholder for the bright and glittering presence.</p>
+        <p><strong>Coming Soon</strong></p>
+        <p>Cast bios and character details will be added to the website soon.</p>
       </article>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero {
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero__figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__frank {
+    width: min(100%, 420px);
+    max-width: 420px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+  }
+
+  .member-card {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .member-card .placeholder {
+    min-height: 180px;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .hero__frank {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
