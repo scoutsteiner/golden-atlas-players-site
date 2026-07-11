@@ -21,9 +21,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Coming soon</h2>
-    <p class="section-copy">Calendar updates and ticket details will be shared here as they’re confirmed.</p>
+  <section class="calendar-section">
+    <h2 class="section-title">Upcoming shows</h2>
+    <p class="section-copy">Check the calendar below for upcoming screenings and events.</p>
+    <div class="calendar-embed">
+      <iframe
+        title="Golden Atlas Players calendar"
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&showCalendars=0&title&src=Z29sZGVuYXRsYXNwbGF5ZXJzQGdtYWlsLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%230b8043"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </div>
   </section>
 </BaseLayout>
 
@@ -40,6 +48,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .hero-card {
     max-width: 420px;
+  }
+
+  .calendar-section {
+    display: grid;
+    gap: 1rem;
+    overflow-x: hidden;
+  }
+
+  .calendar-embed {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid rgba(217, 45, 45, 0.24);
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .calendar-embed iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 600px;
+    border: 0;
+  }
+
+  @media (max-width: 760px) {
+    .calendar-embed iframe {
+      min-height: 540px;
+    }
   }
 
   @media (max-width: 760px) {
