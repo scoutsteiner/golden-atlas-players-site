@@ -1,14 +1,113 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const castMembers = [
+  {
+    stageName: 'Emma Stoner',
+    pronouns: 'She/her',
+    castRole: 'Co-director, resident feral goblin',
+    usualRole: 'Frank, all roles',
+    image: '/images/cast/bios/emma_cast.jpg',
+    alt: 'Emma Stoner, Golden Atlas Players cast member',
+    photoCredit: 'Self portrait',
+    questions: [
+      ['How long have you been doing Rocky?', '1997 to 1999, then 2018 to present.'],
+      ['How did you get into Rocky?', 'I saw it once on TV as a kid and became obsessed with Frank-N-Furter.'],
+      ['Favorite character', 'Frank-N-Furter'],
+      ['Favorite song', 'Sweet Transvestite'],
+      ['Favorite callback', 'FE Fi fo fum first I jerk off then I... Come, we are ready for the floorshow.'],
+      ['Most memorable Rocky moment', 'Performing for Barry Bostwick and Pat Quinn.'],
+      ['Fun fact', "I'm weird."],
+    ],
+  },
+  {
+    stageName: 'Jade',
+    pronouns: 'She/they',
+    castRole: 'Cast member and stage crew',
+    usualRole: 'Criminologist',
+    image: '/images/cast/bios/jade_cast.jpg',
+    alt: 'Jade, Golden Atlas Players cast member',
+    photoCredit: 'Photo by Xen',
+    questions: [
+      ['How long have you been doing Rocky?', 'One year.'],
+      ['How did you get into Rocky?', 'My partner Xen got me into it when I moved in.'],
+      ['Favorite character', 'Riff Raff'],
+      ['Favorite song', 'Time Warp'],
+      ['Most memorable Rocky moment', 'Getting to play a part on stage for the first time.'],
+      ['Fun fact', 'I play music.'],
+      ['Outside of Rocky', 'We have many cats.'],
+    ],
+  },
+  {
+    stageName: 'Jellybean',
+    pronouns: 'She/her',
+    castRole: 'Cast member',
+    usualRole: 'Columbia, Magenta, Rocky',
+    image: '/images/cast/bios/jellybean_cast.jpeg',
+    alt: 'Jellybean, Golden Atlas Players cast member',
+    photoCredit: 'Photo by @jacoblensphotography',
+    questions: [
+      ['How long have you been doing Rocky?', 'Since November 2023.'],
+      ['How did you get into Rocky?', 'I tore my ACL playing rugby, needed a new hobby, and found Rocky through a teammate.'],
+      ['Favorite song', "Eddie's Teddy"],
+      ['Favorite callback', 'Crucify the lips'],
+      ['Most memorable Rocky moment', "Lying at a virgin popping and popping a castmate's nephew."],
+      ['Fun fact', 'I have two cadaver ligaments.'],
+      ['Outside of Rocky', 'Renovating my house, reading books, hiking, camping, and taking care of my three cats, dog, turtle, and snake.'],
+    ],
+  },
+  {
+    stageName: 'Luna',
+    pronouns: 'She/her',
+    castRole: 'Cast member',
+    usualRole: 'My role varies, but my favorite is playing Magenta.',
+    image: '/images/cast/bios/luna_cast.jpg',
+    alt: 'Luna, Golden Atlas Players cast member',
+    photoCredit: 'Photo by @jacoblensphotography',
+    social: {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/hbobynskyj',
+    },
+    questions: [
+      ['How long have you been doing Rocky?', 'Since 2024.'],
+      ['How did you get into Rocky?', "Rocky Horror is one of my mom's favorite movies, so I've been watching it since I was a kid. As a mother, it's a joy seeing how much my eight-year-old loves the movie too!"],
+      ['Favorite character', 'Magenta'],
+      ['Favorite song', 'Science Fiction/Double Feature'],
+      ['Favorite callback', 'Asshole! Slut!'],
+      ['Most memorable Rocky moment', 'The first role I ever performed at Rocky was Trixie. I was so nervous being on stage for the first time, but hearing my cast members cheer for me was really special.'],
+      ['Fun fact', "I will be graduating from ESU in December 2026 with my bachelor's degree in special education!"],
+      ['Outside of Rocky', 'Two seems to be my favorite number. I have two kids, two chickens, and two kittens! In my limited spare time, I enjoy writing werewolf novels for the reading app Dreame. Look me up there as Gen17. I also enjoy being out in nature despite my allergies to everything outside. Autumn is my favorite season, and I wish it could stay that way year-round.'],
+    ],
+  },
+  {
+    stageName: 'Xenobia',
+    pronouns: 'She/they/them/never late for dinner',
+    castRole: 'Cast member',
+    usualRole: 'Dr. Scott, Criminologist, Eddie, Janet, Magenta, Riff Raff',
+    image: '/images/cast/bios/xenobia_cast.JPG',
+    alt: 'Xenobia, Golden Atlas Players cast member',
+    photoCredit: 'Photo by @jacoblensphotography',
+    questions: [
+      ['How long have you been doing Rocky?', 'Since July 2022.'],
+      ['How did you get into Rocky?', "I wanted to be in a shadow cast since I was a kid. I finally joined a cast in July 2022 and met good people there. I'm now in my forever home with the Golden Atlas Players at the GAP Theatre."],
+      ['Favorite character', 'Magenta'],
+      ['Favorite song', 'Science Fiction/Double Feature'],
+      ['Favorite callback', '86 the Meatloaf'],
+      ['Most memorable Rocky moment', 'The rubber part of the wheelchair wheels came off just in time for me to say, "I can\'t move my wheels!"'],
+      ['Fun fact', "I'm also an amateur drag performer named Little Sunshine."],
+      ['Outside of Rocky', "I'm an amateur drag performer named Little Sunshine. I like making TikToks. I'm a member of a horror writers club and attend monthly horror trivia at Haunt Coffee."],
+    ],
+  },
+];
 ---
 
-<BaseLayout title="Cast" description="Placeholder cast profiles for Golden Atlas Players.">
-  <section class="hero">
-    <div>
+<BaseLayout title="Cast" description="Meet the Golden Atlas Players cast members bringing Rocky Horror to the GAP Theatre.">
+  <section class="hero cast-hero">
+    <div class="hero__content">
       <span class="badge">Cast</span>
       <h1>Meet the players behind the curtain.</h1>
-      <p>Golden Atlas Players was founded in 2025 by Clint and Emma, who wanted to create a safe and supportive community where people of all backgrounds can enjoy Rocky Horror together.</p>
-      <p class="section-copy">We’re building out the cast page now, and we’ll be adding cast bios and performer spotlights to the site soon.</p>
+      <p class="section-copy">Golden Atlas Players was founded in 2025 by Clint and Emma, who wanted to create a safe and supportive community where people of all backgrounds can enjoy Rocky Horror together.</p>
+      <p class="section-copy">Meet the cast members bringing the callbacks, chaos, and late-night heart to the GAP Theatre stage.</p>
     </div>
     <div class="hero__figure">
       <img
@@ -16,73 +115,249 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         src="/assets/images/cast/about-cast.jpg"
         alt="Golden Atlas Players cast and community"
         loading="eager"
+        decoding="async"
       />
     </div>
   </section>
 
-  <section>
-    <div class="member-grid">
-      <article class="member-card">
-        <div class="placeholder">Character portrait</div>
-        <p><strong>Coming Soon</strong></p>
-        <p>Cast bios and character details will be added to the website soon.</p>
-      </article>
-      <article class="member-card">
-        <div class="placeholder">Character portrait</div>
-        <p><strong>Coming Soon</strong></p>
-        <p>Cast bios and character details will be added to the website soon.</p>
-      </article>
-      <article class="member-card">
-        <div class="placeholder">Character portrait</div>
-        <p><strong>Coming Soon</strong></p>
-        <p>Cast bios and character details will be added to the website soon.</p>
-      </article>
+  <section class="cast-section" aria-labelledby="cast-heading">
+    <div class="section-header">
+      <span class="badge">Meet the Cast</span>
+      <h2 id="cast-heading" class="section-title">Golden Atlas Players</h2>
+    </div>
+
+    <div class="cast-grid">
+      {castMembers.map((member) => (
+        <article class="cast-card">
+          <figure class="cast-card__figure">
+            <img
+              class="cast-card__photo"
+              src={member.image}
+              alt={member.alt}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{member.photoCredit}</figcaption>
+          </figure>
+
+          <div class="cast-card__body">
+            <header class="cast-card__header">
+              <h3>{member.stageName}</h3>
+              <dl class="cast-meta">
+                <div>
+                  <dt>Pronouns</dt>
+                  <dd>{member.pronouns}</dd>
+                </div>
+                <div>
+                  <dt>Cast role</dt>
+                  <dd>{member.castRole}</dd>
+                </div>
+                <div>
+                  <dt>Character or usual role</dt>
+                  <dd>{member.usualRole}</dd>
+                </div>
+              </dl>
+            </header>
+
+            <dl class="cast-qa">
+              {member.questions.map(([question, answer]) => (
+                <div>
+                  <dt>{question}</dt>
+                  <dd>{answer}</dd>
+                </div>
+              ))}
+            </dl>
+
+            {member.social && (
+              <a class="cast-social" href={member.social.href} target="_blank" rel="noopener noreferrer">
+                {member.social.label}
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .hero {
+  .cast-hero {
     align-items: center;
     gap: 1.5rem;
+    min-width: 0;
   }
 
-  .hero__figure {
+  .cast-hero .hero__figure {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .hero__frank {
+  .cast-hero .hero__frank {
     width: min(100%, 420px);
     max-width: 420px;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 1rem;
     border: 1px solid var(--border);
+    filter: none;
+    transform: none;
   }
 
-  .member-card {
+  .cast-section {
     display: grid;
-    gap: 0.65rem;
+    gap: 1.25rem;
+    min-width: 0;
   }
 
-  .member-card .placeholder {
-    min-height: 180px;
-    border-radius: 1rem;
+  .section-header {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    align-items: start;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .cast-card {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    height: 100%;
+    min-width: 0;
+    padding: clamp(1rem, 2vw, 1.25rem);
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    background:
+      linear-gradient(155deg, rgba(217, 45, 45, 0.09), rgba(255, 255, 255, 0.025) 42%),
+      rgba(255, 255, 255, 0.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .cast-card__figure {
+    display: grid;
+    justify-items: center;
+    gap: 0.55rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  .cast-card__photo {
+    --photo-size: clamp(168px, 46vw, 224px);
+    width: var(--photo-size);
+    height: var(--photo-size);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(213, 180, 111, 0.72);
+    box-shadow: 0 0 0 7px rgba(217, 45, 45, 0.12), 0 12px 26px rgba(0, 0, 0, 0.34);
+  }
+
+  .cast-card__figure figcaption {
+    color: rgba(216, 198, 180, 0.72);
+    font-size: 0.82rem;
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  .cast-card__body,
+  .cast-card__header,
+  .cast-meta,
+  .cast-qa {
+    display: grid;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+
+  .cast-card__header h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.45rem, 3vw, 1.85rem);
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .cast-meta,
+  .cast-qa {
+    margin: 0;
+  }
+
+  .cast-meta {
+    gap: 0.45rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(213, 180, 111, 0.2);
+  }
+
+  .cast-meta div,
+  .cast-qa div {
+    display: grid;
+    gap: 0.22rem;
+  }
+
+  .cast-meta dt,
+  .cast-qa dt {
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .cast-meta dt {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .cast-qa dt {
+    font-size: 0.95rem;
+  }
+
+  .cast-meta dd,
+  .cast-qa dd {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+
+  .cast-social {
+    justify-self: start;
+    width: fit-content;
+    margin-top: 0.1rem;
+    padding: 0.55rem 0.78rem;
+    border: 1px solid rgba(217, 45, 45, 0.4);
+    border-radius: 999px;
+    color: var(--text);
+    font-weight: 700;
+    background: rgba(217, 45, 45, 0.14);
+  }
+
+  .cast-social:hover {
+    color: white;
+    background: rgba(217, 45, 45, 0.24);
+    transform: translateY(-1px);
   }
 
   @media (max-width: 760px) {
-    .hero {
+    .cast-hero {
       grid-template-columns: 1fr;
       gap: 1.25rem;
     }
 
-    .hero__frank {
+    .cast-hero .hero__frank {
       width: 100%;
       max-width: 100%;
+    }
+
+    .cast-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cast-card {
+      padding: 1rem;
     }
   }
 </style>
