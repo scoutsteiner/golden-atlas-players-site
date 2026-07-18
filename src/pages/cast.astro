@@ -1,7 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const castMembers = [
+type SocialLink = {
+  label: string;
+  href: string;
+};
+
+type CastMember = {
+  stageName: string;
+  pronouns: string;
+  castRole: string;
+  usualRole: string;
+  image: string;
+  alt: string;
+  photoCredit: string;
+  photoCreditUrl?: string;
+  socialLinks?: SocialLink[];
+  questions: [string, string][];
+};
+
+const castMembers: CastMember[] = [
   {
     stageName: 'Emma Stoner',
     pronouns: 'She/her',
@@ -10,10 +28,12 @@ const castMembers = [
     image: '/images/cast/bios/emma_cast.jpg',
     alt: 'Emma Stoner, Golden Atlas Players cast member',
     photoCredit: 'Self portrait',
-    social: {
-      label: 'Facebook',
-      href: 'https://www.facebook.com/EmmaStoner234',
-    },
+    socialLinks: [
+      {
+        label: 'Facebook',
+        href: 'https://www.facebook.com/EmmaStoner234',
+      },
+    ],
     questions: [
       ['How long have you been doing Rocky?', '1997 to 1999, then 2018 to present.'],
       ['How did you get into Rocky?', 'I saw it once on TV as a kid and became obsessed with Frank-N-Furter.'],
@@ -49,7 +69,8 @@ const castMembers = [
     usualRole: 'Columbia, Magenta, Rocky',
     image: '/images/cast/bios/jellybean_cast.jpeg',
     alt: 'Jellybean, Golden Atlas Players cast member',
-    photoCredit: 'Photo by @jacoblensphotography',
+    photoCredit: '@jacob.lens.photography',
+    photoCreditUrl: 'https://www.instagram.com/jacob.lens.photography/',
     questions: [
       ['How long have you been doing Rocky?', 'Since November 2023.'],
       ['How did you get into Rocky?', 'I tore my ACL playing rugby, needed a new hobby, and found Rocky through a teammate.'],
@@ -67,11 +88,14 @@ const castMembers = [
     usualRole: 'My role varies, but my favorite is playing Magenta.',
     image: '/images/cast/bios/luna_cast.jpg',
     alt: 'Luna, Golden Atlas Players cast member',
-    photoCredit: 'Photo by @jacoblensphotography',
-    social: {
-      label: 'Facebook',
-      href: 'https://www.facebook.com/hbobynskyj',
-    },
+    photoCredit: '@jacob.lens.photography',
+    photoCreditUrl: 'https://www.instagram.com/jacob.lens.photography/',
+    socialLinks: [
+      {
+        label: 'Facebook',
+        href: 'https://www.facebook.com/hbobynskyj',
+      },
+    ],
     questions: [
       ['How long have you been doing Rocky?', 'Since 2024.'],
       ['How did you get into Rocky?', "Rocky Horror is one of my mom's favorite movies, so I've been watching it since I was a kid. As a mother, it's a joy seeing how much my eight-year-old loves the movie too!"],
@@ -90,7 +114,8 @@ const castMembers = [
     usualRole: 'Dr. Scott, Criminologist, Eddie, Janet, Magenta, Riff Raff',
     image: '/images/cast/bios/xenobia_cast.JPG',
     alt: 'Xenobia, Golden Atlas Players cast member',
-    photoCredit: 'Photo by @jacoblensphotography',
+    photoCredit: '@jacob.lens.photography',
+    photoCreditUrl: 'https://www.instagram.com/jacob.lens.photography/',
     questions: [
       ['How long have you been doing Rocky?', 'Since July 2022.'],
       ['How did you get into Rocky?', "I wanted to be in a shadow cast since I was a kid. I finally joined a cast in July 2022 and met good people there. I'm now in my forever home with the Golden Atlas Players at the GAP Theatre."],
@@ -100,6 +125,49 @@ const castMembers = [
       ['Most memorable Rocky moment', 'The rubber part of the wheelchair wheels came off just in time for me to say, "I can\'t move my wheels!"'],
       ['Fun fact', "I'm also an amateur drag performer named Little Sunshine."],
       ['Outside of Rocky', "I'm an amateur drag performer named Little Sunshine. I like making TikToks. I'm a member of a horror writers club and attend monthly horror trivia at Haunt Coffee."],
+    ],
+  },
+  {
+    stageName: 'Liz',
+    pronouns: 'she/her',
+    castRole: 'Cast Member',
+    usualRole: 'Janet, Rocky, Frank, Columbia, Trixie',
+    image: '/images/cast/bios/liz.jpg',
+    alt: 'Liz, Golden Atlas Players cast member',
+    photoCredit: '@jacob.lens.photography',
+    photoCreditUrl: 'https://www.instagram.com/jacob.lens.photography/',
+    socialLinks: [
+      {
+        label: 'Instagram',
+        href: 'https://www.instagram.com/lizkameen/',
+      },
+    ],
+    questions: [
+      ['How long have you been doing Rocky?', 'Since 2023'],
+      ['How did you get into Rocky?', 'Spaced Out Sensations went to Moravian University and I joined after my second show! When GAP started their shows, I immediately joined this cast too! '],
+      ['Favorite character', 'Frank and Rocky'],
+      ['Favorite song', 'I’m Going Home'],
+      ['Favorite callback', '“He\'s got more hurt than you\'ve got skirt, slut!"'],
+      ['Most memorable Rocky moment', 'iClint farting on cue perfectly at the 2024 Moravian show during Takeover scene! '],
+      ['Fun fact', 'I always wanted to study abroad in Paris and even had a France-themed room growing up but then chose to study abroad in Florence, Italy in college! '],
+      ['Outside of Rocky', 'I love painting and writing, especially watercolor and poetry. I have the travel bug and love getting out into nature — I’m also an annoyingly fast reader, typer, and talker!'],
+    ],
+  },
+  {
+    stageName: 'Kit/ Kitty',
+    pronouns: 'They/He',
+    castRole: 'Multi-purpose ',
+    usualRole: 'Columbia, Brad, Eddie, whatever is needed ',
+    image: '/images/cast/bios/kitty.jpg',
+    alt: 'Kit/ Kitty, Golden Atlas Players cast member',
+    photoCredit: '@jacob.lens.photography',
+    photoCreditUrl: 'https://www.instagram.com/jacob.lens.photography/',
+    socialLinks: [],
+    questions: [
+      ['How long have you been doing Rocky?', "Since 2008, though there's been a few breaks in there.  "],
+      ['How did you get into Rocky?', 'Our GSA in college did a large show in the local single screen theater a block off campus every year, then when I moved to the lehigh valley I rediscovered the greater rocky shadow cast community.  '],
+      ['Favorite callback', '"Bullwinkle!" during rocky horror roll call '],
+      ['Fun fact', 'I have at least one crocheted costume piece for each character that I play. '],
     ],
   },
 ];
@@ -141,7 +209,15 @@ const castMembers = [
               loading="lazy"
               decoding="async"
             />
-            <figcaption>{member.photoCredit}</figcaption>
+            <figcaption>
+              {member.photoCreditUrl ? (
+                <a href={member.photoCreditUrl} target="_blank" rel="noopener noreferrer">
+                  {member.photoCredit}
+                </a>
+              ) : (
+                member.photoCredit
+              )}
+            </figcaption>
           </figure>
 
           <div class="cast-card__body">
@@ -172,10 +248,14 @@ const castMembers = [
               ))}
             </dl>
 
-            {member.social && (
-              <a class="cast-social" href={member.social.href} target="_blank" rel="noopener noreferrer">
-                {member.social.label}
-              </a>
+            {!!member.socialLinks?.length && (
+              <div class="cast-socials">
+                {member.socialLinks.map((social) => (
+                  <a class="cast-social" href={social.href} target="_blank" rel="noopener noreferrer">
+                    {social.label}
+                  </a>
+                ))}
+              </div>
             )}
           </div>
         </article>
@@ -268,6 +348,16 @@ const castMembers = [
     line-height: 1.35;
   }
 
+  .cast-card__figure figcaption a {
+    color: inherit;
+    text-decoration-color: rgba(216, 198, 180, 0.45);
+    text-underline-offset: 0.18em;
+  }
+
+  .cast-card__figure figcaption a:hover {
+    color: var(--text);
+  }
+
   .cast-card__body,
   .cast-card__header,
   .cast-meta,
@@ -325,6 +415,12 @@ const castMembers = [
     color: var(--muted);
     line-height: 1.6;
     overflow-wrap: break-word;
+  }
+
+  .cast-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .cast-social {
